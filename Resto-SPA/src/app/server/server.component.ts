@@ -9,7 +9,6 @@ export class ServerComponent implements OnInit {
   serverId = 10;
   serverStatus = 'offline';
   allowNewServer = false;
-  serverCreationStatus = 'No server was created!';
   serverName = '';
   showNotification = false;
 
@@ -22,18 +21,26 @@ export class ServerComponent implements OnInit {
   ngOnInit() {
   }
 
-  getServerStatus() {
-    return this.serverStatus;
-  }
-
   onCreateServer() {
-    this.serverCreationStatus = 'Server is created! Name is ' +
-    this.serverName;
-    this.showNotification = true;
+    if (this.serverName.trim().length <= 0) {
+      this.showNotification = false;
+    } else {
+      this.showNotification = true;
+      this.serverStatus = Math.random() > 0.5 ?
+      'online' : 'offline';
+    }
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+
+    if (this.serverName.trim().length <= 0) {
+      this.showNotification = false;
+    }
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 
 }
