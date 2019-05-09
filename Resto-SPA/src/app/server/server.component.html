@@ -28,10 +28,9 @@
     </div>
   </div>
   <div *ngIf="showNotification; else noServer" class="row">
-    <p>
-      Server was created! The server name is {{ serverName }}.<br>
-      {{ serverName }} with ID {{ serverId }} is    
-      <span [ngStyle]="{'color': serverStatus === 'online' ? 'green' : 'red'}"><b>{{ serverStatus }}</b></span>
+    <p *ngFor="let server of servers; let i = index">
+      The server {{ servers[i] }} was created with status as 
+      <span [ngStyle]="{'color': serverStatuses[i] === 'online' ? 'green' : 'red'}"><b>{{ serverStatuses[i] }}</b>.</span>
     </p>
   </div>
   <ng-template #noServer>

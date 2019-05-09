@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <h3>Assignment Three</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <ol>
+            <li>Add a button which says 'Display Details'</li>
+            <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
+            <li>Toggle the displaying of that button created on that first step</li>
+            <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
+            <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (via ngClass)</li>
+          </ol>
+    </div>    
+  </div>  
+  <div class="row">
+    <button class="btn btn-primary"
+      (click)="onDisplayDetails()">
+      Display Details
+    </button>
+  </div>
+  <div *ngIf="showParagraph">
+    <div class="row mt-3">
+      <p>Let's go outside!</p>
+    </div>
+    <div class="row">
+      <ul>
+        <li *ngFor="let log of logs; let i = index"
+        [ngStyle]="{'background-color': i >= 4 ? 'blue' : 'none'}"
+        [ngClass]="{'white-text': i >= 4}">
+          Clicked on {{ logs[i] }}        
+        </li>  
+      </ul>      
+    </div>    
+  </div>
+</div>

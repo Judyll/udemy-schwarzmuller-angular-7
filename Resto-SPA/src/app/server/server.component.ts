@@ -11,6 +11,8 @@ export class ServerComponent implements OnInit {
   allowNewServer = false;
   serverName = '';
   showNotification = false;
+  servers = [];
+  serverStatuses = [];
 
   constructor() {
     setTimeout(() => {
@@ -26,8 +28,9 @@ export class ServerComponent implements OnInit {
       this.showNotification = false;
     } else {
       this.showNotification = true;
-      this.serverStatus = Math.random() > 0.5 ?
-      'online' : 'offline';
+      this.servers.push(this.serverName);
+      this.serverStatuses.push(Math.random() > 0.5 ?
+      'online' : 'offline');
     }
   }
 
@@ -38,9 +41,4 @@ export class ServerComponent implements OnInit {
       this.showNotification = false;
     }
   }
-
-  getColor() {
-    return this.serverStatus === 'online' ? 'green' : 'red';
-  }
-
 }
