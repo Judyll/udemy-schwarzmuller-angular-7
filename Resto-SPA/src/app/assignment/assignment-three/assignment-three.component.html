@@ -28,7 +28,7 @@
         <li *ngFor="let log of logs; let i = index"
         [ngStyle]="{'background-color': i >= 4 ? 'blue' : 'none'}"
         [ngClass]="{'white-text': i >= 4}">
-          Clicked on {{ logs[i] }}        
+          Clicked on {{ log }}        
         </li>  
       </ul>      
     </div>    

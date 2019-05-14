@@ -1,3 +1,4 @@
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 // Node modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,12 @@ import { WarningComponent } from './alerts/warning/warning.component';
 import { SuccessComponent } from './alerts/success/success.component';
 import { AssignmentTwoComponent } from './assignment/assignment-two/assignment-two.component';
 import { AssignmentThreeComponent } from './assignment/assignment-three/assignment-three.component';
+import { HeaderComponent } from './header/header.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 @NgModule({
    declarations: [
@@ -19,7 +26,14 @@ import { AssignmentThreeComponent } from './assignment/assignment-three/assignme
       WarningComponent,
       SuccessComponent,
       AssignmentTwoComponent,
-      AssignmentThreeComponent
+      AssignmentThreeComponent,
+      HeaderComponent,
+      RecipesComponent,
+      RecipeListComponent,
+      RecipeDetailComponent,
+      RecipeItemComponent,
+      ShoppingListComponent,
+      ShoppingEditComponent
    ],
    imports: [
       BrowserModule,
@@ -28,10 +42,7 @@ import { AssignmentThreeComponent } from './assignment/assignment-three/assignme
    providers: [
       DatePipe
    ],
-   // We are telling Angular which component to bootstrap at the
-   // start of the application
-   bootstrap: [
-      AppComponent
-   ]
+   // When the module is loaded, its gonna bootstrap the AppComponent which is the app.component.ts
+   bootstrap: [AppComponent]
 })
 export class AppModule { }
