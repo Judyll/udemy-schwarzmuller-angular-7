@@ -1,9 +1,9 @@
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 // Node modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Local components
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -37,7 +37,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
    ],
    imports: [
       BrowserModule,
-      FormsModule
+      FormsModule,
+      // Add the NGX dropdown module - https://valor-software.com/ngx-bootstrap/#/dropdowns
+      BsDropdownModule.forRoot()
    ],
    providers: [
       DatePipe
