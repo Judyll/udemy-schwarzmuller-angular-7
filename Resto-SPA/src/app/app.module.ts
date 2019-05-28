@@ -7,7 +7,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Local components
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
+import { ServerComponent } from './lecture/server/server.component';
 import { WarningComponent } from './alerts/warning/warning.component';
 import { SuccessComponent } from './alerts/success/success.component';
 import { AssignmentTwoComponent } from './assignment/assignment-two/assignment-two.component';
@@ -19,6 +19,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { S5AppComponent } from './lecture/section-5/s5-app/s5-app.component';
+import { S5CockpitComponent } from './lecture/section-5/s5-cockpit/s5-cockpit.component';
+import { S5ServerComponent } from './lecture/section-5/s5-server/s5-server.component';
 @NgModule({
    declarations: [
       AppComponent,
@@ -33,7 +36,10 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
       RecipeDetailComponent,
       RecipeItemComponent,
       ShoppingListComponent,
-      ShoppingEditComponent
+      ShoppingEditComponent,
+      S5AppComponent,
+      S5CockpitComponent,
+      S5ServerComponent
    ],
    imports: [
       BrowserModule,

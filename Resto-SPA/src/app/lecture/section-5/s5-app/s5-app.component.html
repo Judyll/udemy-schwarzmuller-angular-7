@@ -1,0 +1,16 @@
+<!--We are creating a custom event 'serverCreated' which
+  calls the 'onServerAdded' method.  We are also using the
+  $event to catch some data associated with the event. 
+-->
+<app-s5-cockpit 
+  (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"></app-s5-cockpit>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <app-s5-server 
+      *ngFor="let serverElement of serverElements; let i = index"
+      [ngClass]="{'mt-2': i >= 1}"
+      [element]="serverElement"></app-s5-server>
+  </div>
+</div>
