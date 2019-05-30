@@ -1,6 +1,8 @@
-<!--We are creating a custom event 'serverCreated' which
-  calls the 'onServerAdded' method.  We are also using the
-  $event to catch some data associated with the event. 
+<!--We are creating a custom event 'serverCreated' from s5-cockpit.component.ts which
+  calls the 'onServerAdded' from s5-app.component.ts method.  We are also using the
+  $event to catch some data associated with the event. This is what you call an
+  event binding.  The 'onServerAdded' method accepts the same type as the 
+  'serverCreated' event which is of type {serverName: string, serverContent: string}
 -->
 <app-s5-cockpit 
   (serverCreated)="onServerAdded($event)"
@@ -8,6 +10,10 @@
 <hr>
 <div class="row">
   <div class="col-md-12">
+    <!--We are iterating the 'serverElements' array from s5-app.component.ts and each of
+      the elements in the array are bind to the [element] which is a property from 
+      s5-server.component.ts. This is what we call the property binding.
+  -->
     <app-s5-server 
       *ngFor="let serverElement of serverElements; let i = index"
       [ngClass]="{'mt-2': i >= 1}"
